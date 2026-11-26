@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Siswa</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-success" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Sekolah</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="beranda.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="datasiswa.html">Siswa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="guru.html">Guru</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mapel.html">Mapel</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- card tabel -->
+    <div class="container mt-3">
+      <div class="card border-success">
+        <div class="card-header bg-success text-white d-flex justify-content-between align-items-center rounded-top">
+          <h5 class="mb-0">Data Siswa</h5>
+          <button
+            id="btnTambah"
+            class="btn btn-sm btn-outline-light"
+            data-bs-toggle="modal"
+            data-bs-target="#modalTambah">
+            Tambah
+          </button>
+        </div>
+        <div class="card-body">
+          <table class="table" id="tableBody">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Siswa</th>
+                <th>Kelas</th>
+                <th>JK</th>
+                <th>Alamat</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>1</th>
+                <td>Roghibah Khanifah</td>
+                <td>XI RPL 2</td>
+                <td>Perempuan</td>
+                <td>Klemunan</td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalUbah"
+                    data-bs-nama="Roghibah Khanifah"
+                    data-bs-kelas="XI RPL 2"
+                    data-bs-jk="Perempuan"
+                    data-bs-alamat="Klemunan">
+                    Ubah
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalHapus"
+                    data-bs-nama="Roghibah Khanifah">
+                    Hapus
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th>2</th>
+                <td>Irma Aura Saudya Mecca</td>
+                <td>XI RPL 2</td>
+                <td>Perempuan</td>
+                <td>Binangun</td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalUbah"
+                    data-bs-nama="Irma Aura Saudya Mecca"
+                    data-bs-kelas="XI RPL 2"
+                    data-bs-jk="Perempuan"
+                    data-bs-alamat="Binangun">
+                    Ubah
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalHapus"
+                    data-bs-nama="Irma Aura Saudya Mecca">
+                    Hapus
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- modal tambah -->
+    <div class="modal fade" id="modalTambah" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Tambahkan Data Siswa</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Nama</label>
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="namaTambah"
+                    placeholder="Masukkan Nama Siswa"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Kelas</label>
+                <div class="col-sm-9">
+                  <select class="form-select" id="kelasTambah">
+                    <option selected>Pilih</option>
+                    <option>XI RPL 1</option>
+                    <option>XI RPL 2</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">JK</label>
+                <div class="col-sm-9">
+                  <select class="form-select" id="jkTambah">
+                    <option>Laki-Laki</option>
+                    <option>Perempuan</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Alamat</label>
+                <div class="col-sm-9">
+                  <textarea
+                    class="form-control"
+                    id="alamatTambah"
+                    rows="2"
+                    placeholder="Masukkan Alamat"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">
+                  Batal
+                </button>
+                <button class="btn btn-primary">Simpan</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal ubah -->
+    <div class="modal fade" id="modalUbah" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Ubah Data Siswa</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Nama Siswa</label>
+                <input type="text" class="form-control" id="ubahNama" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Kelas</label>
+                <select class="form-select" id="ubahKelas">
+                  <option>XI RPL 1</option>
+                  <option>XI RPL 2</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Jenis Kelamin</label>
+                <select class="form-select" id="ubahJK">
+                  <option>Laki-Laki</option>
+                  <option>Perempuan</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Alamat</label>
+                <textarea class="form-control" id="ubahAlamat" rows="2"></textarea>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">
+                  Batal
+                </button>
+                <button class="btn btn-primary">Simpan</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal hapus -->
+    <div class="modal fade" id="modalHapus" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Hapus Data</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Apakah Anda Yakin ingin menghapus data ini <span id="hapusNama"></span>?</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Batal
+            </button>
+            <button class="btn btn-danger">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+      const modalUbah = document.getElementById("modalUbah");
+      modalUbah.addEventListener("show.bs.modal", (event) => {
+        const button = event.relatedTarget;
+        document.getElementById("ubahNama").value =
+          button.getAttribute("data-bs-nama");
+        document.getElementById("ubahKelas").value =
+          button.getAttribute("data-bs-kelas");
+        document.getElementById("ubahJK").value =
+          button.getAttribute("data-bs-jk");
+        document.getElementById("ubahAlamat").value =
+          button.getAttribute("data-bs-alamat");
+      });
+
+      // isi otomatis modal hapus
+      const modalHapus = document.getElementById("modalHapus");
+      modalHapus.addEventListener("show.bs.modal", (event) => {
+        const button = event.relatedTarget;
+        const nama = button.getAttribute("data-bs-nama");
+        document.getElementById("hapusNama").textContent = nama;
+      });
+    </script>
+  </body>
+</html>
